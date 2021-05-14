@@ -17,6 +17,7 @@ class User(db.Model):
     position = db.Column(db.String(100), nullable=True)
     updated_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
+    attendance = db.relationship('Attendance', backref='employee')
 
     def __repr__(self):
         return f'<User {self.id}>'
